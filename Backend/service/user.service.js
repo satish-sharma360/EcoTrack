@@ -12,7 +12,7 @@ class UserService {
 
         const hashedPassword = await authService.hashPassword(password)
 
-        const user = await userModel.create({ name, email, password: hashedPassword })
+        const user = await userModel.create({ name, email, password: hashedPassword,image:`https://api.dicebear.com/5.x/initials/svg?seed=${name}` })
 
         return user;
     }
